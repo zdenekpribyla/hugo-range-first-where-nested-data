@@ -5,7 +5,7 @@
                 "DESCRIPTION": "Kabelka vyrobená z pravé měkké kůže v barvě camel s moderním jemným designem. Tato kožená kabelka je uzavíratelná na zip. Díky kontinuální nastavitelnosti jejího popruhu lze kabelku nosit jak přes rameno, tak způsobem cross-body (křížem). Uvnitř kabelky najdeme přepážku uprostřed, která zároveň slouží jako kapsa na zip, a na bočních stěnách pak kapsu na zip a na druhé straně další malou kapsu.",
                 "URL": "https://www.novakabelka.cz/kabelky/gondola-camel/",
                 "IMGURL": "https://cdn.myshoptet.com/usr/www.novakabelka.cz/user/shop/orig/1280.png?586d047f",
-                "PARAM": [
+				"PARAM": [
                     {
                         "PARAM_NAME": "Barva",
                         "VAL": "camel"

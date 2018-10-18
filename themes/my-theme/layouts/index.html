@@ -1,1 +1,15 @@
-homepage
+<h1>Range Testing</h1>
+
+
+
+<ul>
+	{{ range $feed := .Site.Data.mydata }}
+	{{ range ( where $feed.PARAM "VAL" "eq" "camel" ) }}
+		<li>
+			{{ $feed.PRODUCT }}
+		</li>
+
+	{{ end }} 
+	{{ end }}
+</ul>
+
