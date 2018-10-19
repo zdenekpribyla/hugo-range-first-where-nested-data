@@ -1,15 +1,18 @@
-<h1>Range Testing</h1>
+	<h1>Range Testing</h1>
+
+	<ul>
+
+		{{ range $feed := .Site.Data.mydata }}
+		{{ range ( where $feed.PARAM "VAL" "eq" "camel" ) }}
+		{{ if in $feed.CATEGORYTEXT "crossbody" }}
 
 
+			<li>
+				{{ $feed.PRODUCT }}
+			</li>
 
-<ul>
-	{{ range $feed := .Site.Data.mydata }}
-	{{ range ( where $feed.PARAM "VAL" "eq" "camel" ) }}
-		<li>
-			{{ $feed.PRODUCT }}
-		</li>
+		{{ end }}
+		{{ end }}
+		{{ end }}
 
-	{{ end }} 
-	{{ end }}
-</ul>
-
+	</ul>
