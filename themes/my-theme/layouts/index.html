@@ -1,18 +1,46 @@
-	<h1>Range Testing</h1>
+<h1>Range Testing</h1>
 
-	<ul>
+<b>WORKING SOLUTION</b>
 
-		{{ range $feed := .Site.Data.mydata }}
-		{{ range ( where $feed.PARAM "VAL" "eq" "camel" ) }}
-		{{ if in $feed.CATEGORYTEXT "crossbody" }}
+<ul>
+	{{ $json := .Site.Data.mydata }}
+
+	{{ $.Scratch.Set "count" 10 }}
 
 
-			<li>
-				{{ $feed.PRODUCT }}
-			</li>
 
-		{{ end }}
-		{{ end }}
-		{{ end }}
+	{{ range $json }}
 
-	</ul>
+	{{ $feed := . }}
+
+	{{ $vals := slice "cafe" "camel" }}
+
+	{{ $cat := "crossbody"}}
+
+	{{ if gt ($.Scratch.Get "count") 0 }}
+
+	{{ $valfiltered := (where $feed.PARAM "VAL" "in" $vals)  }}
+
+	{{ range $valfiltered }}
+
+
+	{{ if in $feed.CATEGORYTEXT $cat }}
+	
+	<li>
+		name: {{ $feed.PRODUCT }} | price: {{$feed.PRICE}}
+	</li>
+
+	{{ $.Scratch.Add "count" -1 }}
+
+
+	{{ end }}
+
+	{{ end }}
+
+	{{ end }}
+
+	{{ end }}
+
+
+
+</ul>
